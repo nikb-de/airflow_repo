@@ -41,7 +41,9 @@ with DAG(
     t1 = BashOperator(
         task_id='print_date',
         bash_command='date',
+        retries = 1,
     )
+    
 
     t2 = BashOperator(
         task_id='sleep',
